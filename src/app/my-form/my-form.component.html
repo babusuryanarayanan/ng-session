@@ -1,0 +1,20 @@
+<div>
+    {{name}} 
+<input #myInput type="text" [disabled]="disableFlag">
+<button (click)="onClick($event, myInput.value)"> Click </button>
+
+    </div>
+    <hr>
+
+    <app-test-form *ngFor="let fData of myService.formData123"
+    [childData]="fData" (childRespond)="callOneFn($event)"> </app-test-form>
+
+    <div *ngIf="l_condition; else xyz">Content to render when condition is true.</div>
+
+     <ng-template #xyz> 
+         <div class="xyz">
+        <p>So here the else part...</p>
+            </div>
+        </ng-template>
+
+   
